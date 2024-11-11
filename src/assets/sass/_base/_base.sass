@@ -1,6 +1,6 @@
 @import "./abstract/vars"
 @import "./abstract/mixins"
-@import "media"
+@import "./media"
 
 *
   list-style: none
@@ -8,3 +8,65 @@
   padding: 0
   margin: 0
   font-family: "Roboto", sans-serif
+
+.link
+  color: $textColor
+
+  &:hover
+    color: $linksHoverColor
+
+header
+  margin: 0 auto
+  width: 65%
+  @include flexMixin($columnGap: 0, $justifyContent: space-between)
+  border-bottom: 1px solid $disabledTextColor
+
+  & .contacts
+    padding: 7px 20px
+    width: 20%
+    display: flex
+    flex-direction: column
+    align-items: center
+    border-right: 1px solid $disabledTextColor
+
+    & h2
+      font-size: 18px
+      font-weight: 500
+
+    & .contacts__contact
+      color: $linksHoverColor
+
+    & .contacts__work_time
+      color: $disabledTextColor
+      font-size: 14px
+      font-weight: 500
+      display: flex
+      align-items: center
+      column-gap: 5px
+
+  & .info
+    width: 70%
+    padding: 25px 15px
+    @include flexMixin($columnGap: 0, $justifyContent: space-between)
+
+    & .city
+      & p:first-child
+        color: $disabledTextColor
+        font-size: 14px
+        font-weight: 300
+
+      & p:last-child
+        font-size: 18px
+        font-weight: 400
+        color: $textColor
+
+    & .info-links
+      @include flexMixin($columnGap: 10px, $justifyContent: normal)
+
+      & .link
+        font-size: 18px
+        font-weight: 400
+
+  & .search
+    padding: 20px
+    text-align: right

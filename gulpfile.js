@@ -16,7 +16,7 @@ global.app = {
 const parallelTasks = gulp.parallel(copyStatic, resolveHtml, compileSass)
 
 function watcher() {
-    gulp.watch(paths.watch.files, {delay: 1000}, gulp.series(reset, parallelTasks, app.plugins.browserSync.reload))
+    gulp.watch(paths.watch.files, {delay: 1000}, gulp.series(reset, parallelTasks))
 }
 
 const dev = gulp.series(reset, parallelTasks, gulp.parallel(watcher, server));
