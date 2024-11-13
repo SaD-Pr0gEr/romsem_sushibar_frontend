@@ -18,6 +18,7 @@
 header
   margin: 0 auto
   width: 65%
+  background-color: $pageBgColor
   @include flexMixin($columnGap: 0, $justifyContent: space-between)
   border-bottom: 1px solid $disabledTextColor
 
@@ -70,3 +71,38 @@ header
   & .search
     padding: 20px
     text-align: right
+
+.frames
+  @include flexMixin(flex-start, 0, space-between)
+
+nav
+  background-color: $blocksBgColor
+  padding: 0 60px
+
+  & .site-info
+    padding: 30px 15px
+    border-bottom: 1px solid $disabledTextColor
+    @include flexMixin(center, 0, $flexDirection: column, $rowGap: 10px)
+
+.nav-links
+  padding: 30px 15px
+
+  & .nav-icon-link
+    margin-bottom: 25px
+    font-size: 24px
+
+.nav-icon-link
+  position: relative
+  @include flexMixin($columnGap: 20px)
+
+  & .nav-icon-link__tag
+    position: absolute
+    top: -10px
+    text-transform: uppercase
+    background-color: $navLinkTagBgColor
+    color: $navLinkTagFgColor
+    right: 0
+    font-size: 11px
+    font-weight: 100
+    padding: 1px 5px
+    border-radius: 50px
