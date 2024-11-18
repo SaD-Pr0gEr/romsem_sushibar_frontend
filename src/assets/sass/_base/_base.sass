@@ -9,6 +9,44 @@
   margin: 0
   font-family: "Roboto", sans-serif
 
+
+.mb-10
+  margin-bottom: 10px
+
+.mb-50
+  margin-bottom: 50px
+
+.disabled-text
+  color: $disabledTextColor
+
+.icon-active
+  color: $iconsActiveFgColor
+  background-color: $iconsActiveBgColor
+
+.icon-passive
+  color: $iconsDefaultFgColor
+
+.plus-active
+  border-radius: 50%
+  padding: 0 7px
+  font-size: 20px
+
+.minus
+  font-size: 45px
+  font-weight: 300
+
+button
+  padding: 8px 16px
+  border: none
+  border-radius: 5px
+
+  &:active
+    transform: scale(.9)
+    transition: all .2s ease
+
+body
+  background-color: $bodyBgColor
+
 .link
   color: $textColor
 
@@ -84,6 +122,9 @@ nav
     border-bottom: 1px solid $disabledTextColor
     @include flexMixin(center, 0, $flexDirection: column, $rowGap: 10px)
 
+    & img
+      border-radius: 50px
+
 .nav-links
   padding: 30px 15px
 
@@ -106,3 +147,81 @@ nav
     font-weight: 100
     padding: 1px 5px
     border-radius: 50px
+
+.cart
+  margin: 50px 90px 50px 30px
+  text-align: center
+  border-radius: 10px
+  padding-top: 10px
+
+  &.empty
+    background-color: $pageBgColor
+
+    & p.option
+      font-size: 14px
+      color: $optionsBtnFgColor
+      background-color: $optionsBtnBgColor
+      padding: 12px 30px
+      border-radius: 10px
+
+  &.full
+    & .header
+      background-color: $pageBgColor
+      text-align: center
+      padding: 10px
+      border-radius: 5px
+      font-size: 24px
+      font-weight: 500
+
+  & .cart-products
+    width: 100%
+
+    & .cart-product
+      margin-bottom: 25px
+
+  & .submit
+    width: 100%
+    @include flexMixin(center, 0, space-between)
+
+    & p
+      font-size: 20px
+      font-weight: bold
+
+    button
+      color: $buttonTextColor
+      background-color: $buttonBgColor
+
+.cart-product
+  @include flexMixin(center, 10px, center)
+  width: 100%
+
+  & > img
+    width: 30%
+
+  & .cart-product__info
+    width: 65%
+
+    & .name
+      font-size: 20px
+      overflow: hidden
+      text-overflow: ellipsis
+      white-space: nowrap
+
+    & .calculator
+      @include flexMixin(center, 10px, center)
+
+      .count
+        font-size: 20px
+
+    & .price
+      font-weight: bolder
+
+.frames
+  & nav
+    width: 10%
+
+  & header
+    width: 70%
+
+  & .cart
+    width: 15%
