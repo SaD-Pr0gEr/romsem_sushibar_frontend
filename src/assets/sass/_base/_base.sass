@@ -186,6 +186,7 @@ nav
     & p
       font-size: 20px
       font-weight: bold
+      @include flexMixin(center, 5px, flex-start)
 
     button
       color: $buttonTextColor
@@ -215,6 +216,7 @@ nav
 
     & .price
       font-weight: bolder
+      @include flexMixin(center, 5px, center)
 
 .frames
   & nav
