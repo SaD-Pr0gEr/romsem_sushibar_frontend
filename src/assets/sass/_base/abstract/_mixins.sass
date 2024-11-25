@@ -1,7 +1,8 @@
-@mixin flexMixin($alignItems: center, $columnGap: 10px, $justifyContent: flex-start, $flexDirection: row, $rowGap: 0)
+@mixin flexMixin($alignItems: center, $columnGap: 10px, $justifyContent: flex-start, $flexDirection: row, $rowGap: 0, $flexWrap: nowrap)
   display: flex
   align-items: $alignItems
   column-gap: $columnGap
   justify-content: $justifyContent
   flex-direction: $flexDirection
   row-gap: $rowGap
+  flex-wrap: $flexWrap

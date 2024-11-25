@@ -2,13 +2,21 @@
 <html lang="en">
 @@include('../include/head.html', {'title': 'Главная'})
 <body>
-<section class="frames">
-    @@include('../include/navbar.html')
-    @@include('../include/header.html')
-    @@include('../include/cart.html')
-<!--    @@include('../include/emptyCart.html')-->
-</section>
 <main>
+    @@include('../include/navbar.html')
+    <div class="content">
+        @@include('../include/header.html')
+        @@include('../include/categoryHeader.html')
+        <div class="products">
+            @@include('../include/productCard.html')
+            @@include('../include/productCard.html')
+            @@include('../include/productCard.html')
+            @@include('../include/productCard.html')
+            @@include('../include/productCard.html')
+        </div>
+    </div>
+    @@include('../include/cart.html')
+    <!--    @@include('../include/emptyCart.html')-->
 </main>
 @@include('../include/bottom_js_scripts.html')
 </body>

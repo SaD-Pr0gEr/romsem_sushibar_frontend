@@ -1,1 +1,19 @@
 @import "./_base/base"
+
+
+.category-header,
+.products
+  width: 80%
+
+.category-header
+  margin: 30px auto
+
+  .sorting
+    width: 20%
+
+.products
+  margin: 0 auto
+  @include flexMixin(flex-start, 0, space-between, $flexWrap: wrap, $rowGap: 30px)
+
+  & .product-card
+    width: 30%
