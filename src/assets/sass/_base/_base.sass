@@ -33,6 +33,16 @@ a:visited
   padding: 0 7px
   font-size: 20px
 
+.price
+  font-weight: bolder
+  @include flexMixin(center, 5px, center)
+
+.detail-btn
+  display: block
+  padding: 10px 30px
+  background-color: $productCardDetailBtnBgColor
+  color: $productCardDetailBtnFgColor
+
 .minus
   font-size: 45px
   font-weight: 300
@@ -209,16 +219,6 @@ nav
       text-overflow: ellipsis
       white-space: nowrap
 
-    & .calculator
-      @include flexMixin(center, 10px, center)
-
-      .count
-        font-size: 20px
-
-    & .price
-      font-weight: bolder
-      @include flexMixin(center, 5px, center)
-
 main
   & nav
     width: 10%
@@ -313,13 +313,6 @@ main
       font-weight: bold
       margin-bottom: 30px
 
-  & .product-attrs
-    color: $productCardAttrsFgColor
-
-    & span:not(:last-child)::after
-      content: ","
-      margin-right: 10px
-
   & .product-card-actions
     margin-top: 5px
     border-top: 1px solid $productCardBorderColor
@@ -327,16 +320,25 @@ main
     @include flexMixin(center, 10px, space-between, $flexWrap: wrap)
 
     & .price,
-    & .detail
+    & .detail-btn
       font-size: 24px
       font-weight: bold
 
-    & .detail
-      display: block
-      padding: 10px 30px
-      background-color: $productCardDetailBtnBgColor
-      color: $productCardDetailBtnFgColor
+    & .detail-btn
+      color: white
 
+.calculator
+  @include flexMixin(center, 10px, center)
+
+  .count
+    font-size: 20px
+
+.product-attrs
+  color: $productCardAttrsFgColor
+
+  & span:not(:last-child)::after
+    content: ","
+    margin-right: 10px
 
 .review
   padding: 10px

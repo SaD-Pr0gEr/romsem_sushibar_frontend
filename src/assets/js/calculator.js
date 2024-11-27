@@ -12,28 +12,42 @@ function calculator(countSelector, priceSelector, action) {
 
 function valueSum(numberSelectorAll) {
     let sum_ = 0;
-    console.log(document.querySelectorAll(numberSelectorAll))
     document.querySelectorAll(numberSelectorAll).forEach((el) => {
         sum_ += Number(el.innerHTML)
     })
     return sum_;
 }
 
-function setProductsSum() {
-    document.querySelector('.cart .submit p span:first-child').innerHTML = valueSum('.cart-product .price span.value')
+function setProductsSum(changeHtmlSelector, valueHtmlSelector) {
+    document.querySelector(changeHtmlSelector).innerHTML = valueSum(valueHtmlSelector)
 }
 
 document.querySelectorAll('.cart-product').forEach((element) => {
     element.querySelector('.plus-active').addEventListener(
         'click', () => {
             calculator(`#${element.id} .count`, `#${element.id} .price span`, 'increment')
-            setProductsSum()
+            setProductsSum('.cart .submit p span:first-child', '.cart-product .price span.value')
         }
     );
     element.querySelector('.minus').addEventListener(
         'click', () => {
             calculator(`#${element.id} .count`, `#${element.id} .price span`, 'decrement')
-            setProductsSum()
+            setProductsSum('.cart .submit p span:first-child', '.cart-product .price span.value')
+        }
+    );
+})
+
+document.querySelectorAll('.product-info').forEach((element) => {
+    element.querySelector('.plus-active').addEventListener(
+        'click', () => {
+            calculator(`#${element.id} .count`, `#${element.id} .price span`, 'increment')
+            setProductsSum('.calc-container .price .value', '.calc-container .price .value')
+        }
+    );
+    element.querySelector('.minus').addEventListener(
+        'click', () => {
+            calculator(`#${element.id} .count`, `#${element.id} .price span`, 'decrement')
+            setProductsSum('.calc-container .price .value', '.calc-container .price .value')
         }
     );
 })

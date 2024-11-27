@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  @@include('../include/head.html', {'title': 'Детальная страница'})
+  <link rel="stylesheet" href="@assets/sass/product_detail.sass">
+</head>
+<body>
+<main>
+  @@include('../include/navbar.html')
+  <div class="content">
+    @@include('../include/header.html')
+    @@include('../include/product_detail.html')
+  </div>
+  @@include('../include/cart.html')
+  <!--    @@include('../include/emptyCart.html')-->
+</main>
+@@include('../include/bottom_js_scripts.html')
+</body>
+</html>
