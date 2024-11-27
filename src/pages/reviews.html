@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    @@include('../include/head.html', {'title': 'Отзывы'})
+    <link rel="stylesheet" href="@assets/sass/reviews.sass">
+</head>
+<body>
+<main>
+    @@include('../include/navbar.html')
+    <div class="content">
+        @@include('../include/header.html')
+        <div class="reviews-block">
+            <h2>Отзывы</h2>
+            @@include('../include/reviews.html')
+        </div>
+    </div>
+    @@include('../include/cart.html')
+    <!--    @@include('../include/emptyCart.html')-->
+</main>
+@@include('../include/bottom_js_scripts.html')
+</body>
+</html>

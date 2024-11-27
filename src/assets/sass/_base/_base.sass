@@ -1,6 +1,5 @@
 @import "./abstract/vars"
 @import "./abstract/mixins"
-@import "./media"
 
 *
   list-style: none
@@ -337,6 +336,20 @@ main
       padding: 10px 30px
       background-color: $productCardDetailBtnBgColor
       color: $productCardDetailBtnFgColor
+
+
+.review
+  padding: 10px
+  background-color: $reviewCardBgColor
+  color: $reviewCardHeaderFgColor
+
+  & .review-header
+    @include flexMixin(center, 20px)
+    margin-bottom: 20px
+
+    & p
+      color: $reviewCardHeaderDateFgColor
+      font-size: 14px
 
 @keyframes slide-in
   0%
